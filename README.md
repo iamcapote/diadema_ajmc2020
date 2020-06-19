@@ -2,3 +2,5 @@
  
 This contains all of the data used in the se study AJMC 2020.
 including qiime commands, etc.
+
+Update: analysis in procress..
