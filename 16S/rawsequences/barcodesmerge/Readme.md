@@ -1,1 +1,0 @@
-This folder was created merging two index/barcode fastq files with the tool vsearch.
