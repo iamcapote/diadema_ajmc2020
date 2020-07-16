@@ -4,7 +4,7 @@ This contains all of the data used in the study AJMC 2020.
 including qiime commands, etc.
 
 
-Workflow
+## WORKFLOW
 
 
 16S rRNA - Qiime2
@@ -15,7 +15,7 @@ Workflow
 http://qiime.org/home_static/dataFiles.html
 ftp://greengenes.microbio.me/greengenes_release/gg_13_8_otus/
 
-
+________________________________________________________________________
 
 CytoB - Geneious & Mega X
 
