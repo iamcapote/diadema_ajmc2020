@@ -5,6 +5,8 @@ including qiime commands, etc.
 
 ## File Tree Directory
 
+"""
+
  |-- diadema_ajmc2020
     |-- 16S
         |-- RawSequences
@@ -22,6 +24,8 @@ including qiime commands, etc.
         |-- Trees
     |-- README.md
     |-- References Thesis.xlx
+    
+"""
     
 
 ## WORKFLOW
