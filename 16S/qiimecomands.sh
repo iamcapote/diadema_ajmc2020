@@ -1,55 +1,42 @@
 # This file contains all the commands used in the study.
 
-# 1 Import Data
 
-qiime tools import   --type 'SampleData[PairedEndSequencesWithQuality]'   --input-path manifest.tsv   --output-path allsamplesimport.qza   --input-format PairedEndFastqManifestPhred33V2
-
-# 2 Import Metadata
-
-qiime metadata tabulate \
- 	 --m-input-file metadata.tsv \
- 	 --m-input-file allsamplesimport.qza \
- 	 --o-visualization allsamplemetadata.qzv
-
-# 3 Import Phylogenetic Trees
+# 1 Import Phylogenetic Trees
 
 qiime tools import \
   --input-path gg_13_8_otus/trees/97_otus.tree \
   --output-path unrooted-tree.qza \
   --type 'Phylogeny[Unrooted]'
 
-# 7 Root Unrooted Tree
+# 2 Root Unrooted Tree
 
 qiime phylogeny midpoint-root \
   --i-tree unrooted-tree.qza \
   --o-rooted-tree rooted-tree.qza
   --type 'Phylogeny[Rooted]'
 
-#  in the step 7 fixing error
-   "All non-root nodes in ``tree`` must have a branch length.
-import skbio"
-
-
-### in python:
-
-1.
-t = skbio.TreeNode.read('/home/qiime2/Desktop/QIIME_DATA/core-2762/gg_13_8_otus/trees/97_otus.tree')
-
-2.
-for n in t.traverse():
-     if n.length is None:
-         n.length = 0.0
-
-# 5 Import Per-feature unaligned Sequence Data
+# 3 Import Per-feature unaligned Sequence Data
 
 qiime tools import \
   --input-path gg_13_8_otus/rep_set/97_otus.fasta  \
   --output-path sequences.qza \
   --type 'FeatureData[Sequence]'
 
+# 4 Import Data
+
+qiime tools import   --type 'SampleData[PairedEndSequencesWithQuality]'   --input-path manifest.tsv   --output-path allsamplesimport.qza   --input-format PairedEndFastqManifestPhred33V2
+
+# 2 Visualize data
+
+qiime demux summarize \
+  --i-data allsamplesimport.qza \
+  --o-visualization allsamplesimport.qzv \
 
 
-# 6 Feature table & feature data
+
+
+
+# 5 Feature table & feature data
 
 qiime feature-table summarize \
   --i-table seaurchinfeaturetable.qza \
@@ -59,20 +46,6 @@ qiime feature-table summarize \
 qiime feature-table tabulate-seqs \
   --i-data sequences.qza \
   --o-visualization sequences.qzv
-
-
-
-
-         
-3.
- import qiime2
- 
-4. 
- ar = qiime2.Artifact.import_data('Phylogeny[Rooted]', t)
- 
-5.
- ar.save('97_otus.qza')
-
 
 
 
@@ -221,6 +194,11 @@ qiime taxa barplot \
 	biom add-metadata -i allsamplesimport.qza -o allsamplesseaurchintable.qza --observation-metadata-fp metadata.tsv
 
 	
+qiime metadata tabulate \
+ 	 --m-input-file metadata.tsv \
+ 	 --m-input-file allsamplesimport.qza \
+ 	 --o-visualization allsamplemetadata.qzv
+
 
 	#  Import Biom table
 
@@ -229,4 +207,6 @@ qiime taxa barplot \
  	 --type 'FeatureTable[Frequency]' \
  	 --input-format BIOMV210Format \
  	 --output-path seaurchinfeaturetable.qza
+
+
 

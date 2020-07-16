@@ -32,8 +32,25 @@ including qiime commands, etc.
 
 Qiime2 Commands used can be found in diadema_ajmc2020\16S\qiimecommands.sh
 
-1. Download and import sequences from diadema_ajmc2020\16S\RawSequences and generate Qiime2 artifacts
+Learn how to use Qiime at:
+https://docs.qiime2.org/2020.6/tutorials/
 
+1. Download and import gg_13_8_otus including phylogenetic trees and references from
+
+http://qiime.org/home_static/dataFiles.html
+
+ftp://greengenes.microbio.me/greengenes_release/gg_13_8_otus/
+
+```
+    qiime2 artifacts generated: 
+        rooted-tree.qza ;
+        sequences.qza ;
+        unrooted-tree.qza ;
+```
+
+2. Download and import sequences from diadema_ajmc2020\16S\RawSequences and generate Qiime2 artifacts
+
+```
     qiime2 artifacts generated: 
         allsamplesimport.qza ; 
         onepointfivesampleimport.qza ; 
@@ -42,16 +59,10 @@ Qiime2 Commands used can be found in diadema_ajmc2020\16S\qiimecommands.sh
         threepointzeroimport.qza ; 
         threepointfive.qza ; 
         fourpointfive.qza ;      
-        
-2. Import metadata to Qiime artifacts
-
-3. Download and import gg_13_8_otus including phylogenetic trees and references from
-
-http://qiime.org/home_static/dataFiles.html
-
-ftp://greengenes.microbio.me/greengenes_release/gg_13_8_otus/
+```
 
 
+3. Create Feature Table and Feature Data Artifacts
 
 ________________________________________________________________________
 

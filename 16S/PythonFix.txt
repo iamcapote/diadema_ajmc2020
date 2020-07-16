@@ -1,0 +1,22 @@
+Python Fix for error:
+   "All non-root nodes in ``tree`` must have a branch length.
+import skbio"
+
+https://forum.qiime2.org/t/greengenes-tree-download-with-branch-lengths/3329/5
+
+
+In [1]: import skbio
+
+In [2]: t = skbio.TreeNode.read('97_otus.tree')
+
+In [3]: for n in t.traverse():
+   ...:     if n.length is None:
+   ...:         n.length = 0.0
+   ...:
+
+In [4]: import qiime2
+
+In [5]: ar = qiime2.Artifact.import_data('Phylogeny[Rooted]', t)
+
+In [6]: ar.save('Rooted97_otus.qza')
+Out[6]: 'Rooted97_otus.qza'
