@@ -3,9 +3,28 @@
 This contains all of the data used in the study AJMC 2020.
 including qiime commands, etc.
 
+## File Tree Directory
+
+ |-- diadema_ajmc2020
+    |-- 16S
+        |-- RawSequences
+            |-- AllSamples
+            |-- CategSize
+        |-- qiimecommands.sh
+    |-- CytoB
+        |-- Alignments
+        |-- Geneious
+            |-- ConsensusSeq
+            |-- Contigs
+            |-- Preparing Samples
+        |-- RawSequences
+        |-- ReferenceSequences
+        |-- Trees
+    |-- README.md
+    |-- References Thesis.xlx
+    
 
 ## WORKFLOW
-
 
 #### 16S rRNA - Qiime2
 
@@ -14,7 +33,7 @@ Qiime2 Commands used can be found in diadema_ajmc2020\16S\qiimecommands.sh
 1. Download and import sequences from diadema_ajmc2020\16S\RawSequences and generate Qiime2 artifacts
 
     qiime2 artifacts generated: 
-         allsamplesimport.qza ; 
+        allsamplesimport.qza ; 
         onepointfivesampleimport.qza ; 
         twopointzeroimport.qza ; 
         twopointfiveimport.qza ; 
@@ -22,7 +41,9 @@ Qiime2 Commands used can be found in diadema_ajmc2020\16S\qiimecommands.sh
         threepointfive.qza ; 
         fourpointfive.qza ;      
         
-2. Download and import gg_13_8_otus including phylogenetic trees and references from
+2. Import metadata to Qiime artifacts
+
+3. Download and import gg_13_8_otus including phylogenetic trees and references from
 
 http://qiime.org/home_static/dataFiles.html
 

@@ -1,34 +1,44 @@
 # This file contains all the commands used in the study.
 
-#1 First Step Import Data
+# 1 Import Data
 
 qiime tools import   --type 'SampleData[PairedEndSequencesWithQuality]'   --input-path manifest.tsv   --output-path allsamplesimport.qza   --input-format PairedEndFastqManifestPhred33V2
 
-	# 1 Adding Metadata
-	biom add-metadata -i allsamplesimport.qza -o allsamplesseaurchintable.qza --observation-metadata-fp metadata.tsv
+# 2 Import Metadata
 
-	qiime metadata tabulate \
+qiime metadata tabulate \
  	 --m-input-file metadata.tsv \
  	 --m-input-file allsamplesimport.qza \
  	 --o-visualization allsamplemetadata.qzv
 
-	# 3 Import Biom table
-
-	qiime tools import \
- 	 --input-path seaurchintable.biom \
- 	 --type 'FeatureTable[Frequency]' \
- 	 --input-format BIOMV210Format \
- 	 --output-path seaurchinfeaturetable.qza
-
-
-# 4 Import Phylogenetic Trees
+# 3 Import Phylogenetic Trees
 
 qiime tools import \
   --input-path gg_13_8_otus/trees/97_otus.tree \
   --output-path unrooted-tree.qza \
   --type 'Phylogeny[Unrooted]'
 
+# 7 Root Unrooted Tree
 
+qiime phylogeny midpoint-root \
+  --i-tree unrooted-tree.qza \
+  --o-rooted-tree rooted-tree.qza
+  --type 'Phylogeny[Rooted]'
+
+#  in the step 7 fixing error
+   "All non-root nodes in ``tree`` must have a branch length.
+import skbio"
+
+
+### in python:
+
+1.
+t = skbio.TreeNode.read('/home/qiime2/Desktop/QIIME_DATA/core-2762/gg_13_8_otus/trees/97_otus.tree')
+
+2.
+for n in t.traverse():
+     if n.length is None:
+         n.length = 0.0
 
 # 5 Import Per-feature unaligned Sequence Data
 
@@ -52,26 +62,7 @@ qiime feature-table tabulate-seqs \
 
 
 
-# 7 Root Unrooted Tree
 
-qiime phylogeny midpoint-root \
-  --i-tree unrooted-tree.qza \
-  --o-rooted-tree rooted-tree.qza
-  --type 'Phylogeny[Rooted]'
-#  in the step 7 fixing error
-   "All non-root nodes in ``tree`` must have a branch length.
-import skbio"
-
-
-### in python:
-
-1.
-t = skbio.TreeNode.read('/home/qiime2/Desktop/QIIME_DATA/core-2762/gg_13_8_otus/trees/97_otus.tree')
-
-2.
-for n in t.traverse():
-     if n.length is None:
-         n.length = 0.0
          
 3.
  import qiime2
@@ -222,4 +213,20 @@ qiime taxa barplot \
   --m-metadata-file grouped_meta.tsv \
   --o-visualization grouped-taxa-bar-plots.qzv
 
+
+
+## OTHER USEFUL COMMANDS
+
+	#  Adding Metadata
+	biom add-metadata -i allsamplesimport.qza -o allsamplesseaurchintable.qza --observation-metadata-fp metadata.tsv
+
+	
+
+	#  Import Biom table
+
+	qiime tools import \
+ 	 --input-path seaurchintable.biom \
+ 	 --type 'FeatureTable[Frequency]' \
+ 	 --input-format BIOMV210Format \
+ 	 --output-path seaurchinfeaturetable.qza
 
