@@ -5,7 +5,7 @@ including qiime commands, etc.
 
 ## File Tree Directory
 
-'''
+```
 
  |-- diadema_ajmc2020
     |-- 16S
@@ -25,7 +25,7 @@ including qiime commands, etc.
     |-- README.md
     |-- References Thesis.xlx
     
-'''
+```
     
 
 ## WORKFLOW
