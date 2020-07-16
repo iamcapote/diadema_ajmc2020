@@ -1,5 +1,8 @@
 # This file contains all the commands used in the study.
 
+# 0 Visualize Qiime visualizations
+
+qiime tools view qiimevisualization.qzv
 
 # 1 Import Phylogenetic Trees
 
@@ -26,14 +29,38 @@ qiime tools import \
 
 qiime tools import   --type 'SampleData[PairedEndSequencesWithQuality]'   --input-path manifest.tsv   --output-path allsamplesimport.qza   --input-format PairedEndFastqManifestPhred33V2
 
-# 2 Visualize data
+# 5 Visualize data
 
 qiime demux summarize \
   --i-data allsamplesimport.qza \
   --o-visualization allsamplesimport.qzv \
 
+# 6 Deblur pt1
 
+qiime quality-filter q-score \
+ --i-demux allsamplesimport.qza \
+ --o-filtered-sequences allsamplesimportdemux-filtered.qza \
+ --o-filter-stats allsamplesimportdemux-filter-stats.qza
 
+# 7 Deblur pt2
+
+qiime deblur denoise-16S \
+  --i-demultiplexed-seqs allsamplesimportdemux-filtered.qza \
+  --p-trim-length 220 \
+  --o-representative-sequences allsamplesimportrep-seqs-deblur.qza \
+  --o-table allsamplesimporttable-deblur.qza \
+  --p-sample-stats \
+  --o-stats allsamplesimportdeblur-stats.qza
+
+# 8 Deblur pt3
+
+qiime metadata tabulate \
+  --m-input-file allsamplesimportdemux-filter-stats.qza \
+  --o-visualization allsamplesimportdemux-filter-stats.qzv
+
+qiime deblur visualize-stats \
+  --i-deblur-stats allsamplesimportdeblur-stats.qza \
+  --o-visualization allsamplesimportdeblur-stats.qzv
 
 
 # 5 Feature table & feature data

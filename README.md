@@ -28,12 +28,32 @@ including qiime commands, etc.
 
 ## WORKFLOW
 
+#### CytoB - Geneious & Mega X
+
+Learn how to use Geneious: https://www.geneious.com/
+
+Learn how to use Mega X:
+https://megasoftware.net/
+
+1. Download and import sequences from diadema_ajmc2020\CytoB\RawSequences into Geneious.
+
+2. Merge Pair Ends, Trim, Normalize and Error Correct sequences.
+
+3. Generate consensus sequence of all samples using Diadema setosum as a reference from diadema_ajmc2020\CytoB\ReferenceSequences\Diadema_setosum_Cytochrome.fasta to produce diadema_ajmc2020\CytoB\Geneious\ConsensusSeq\ConsensusSequenceofAllSamplesUsingReferenceDiademasetosum.fasta
+
+4. Generate consensus sequences and contigs from each separate sample.
+
+5. Align Consensus Sequences from samples and all references to diadema_ajmc2020\CytoB\Alignments generate phylogenetic trees in diadema_ajmc2020\CytoB\Trees
+
+______________________________________________
+
 #### 16S rRNA - Qiime2
 
 Qiime2 Commands used can be found in diadema_ajmc2020\16S\qiimecommands.sh
 
-Learn how to use Qiime at:
-https://docs.qiime2.org/2020.6/tutorials/
+
+Analysis pipeline taken from:
+https://docs.qiime2.org/2020.6/tutorials/moving-pictures/
 
 1. Download and import gg_13_8_otus including phylogenetic trees and references from
 
@@ -62,18 +82,18 @@ ftp://greengenes.microbio.me/greengenes_release/gg_13_8_otus/
 ```
 
 
-3. Create Feature Table and Feature Data Artifacts
+3. Deblur  
+Create Feature Table and Feature Data Artifacts
 
+```
+    qiime2 artifacts generated: 
+        allsamplesimportdeblur-stats.qza ;
+        allsamplesimportdeblur-stats.qzv ;
+        allsamplesimportdemux-filter.qza ; SampleData[SequencesWithQuality]
+        allsamplesimportdemmux-filter-stats.qza ;
+        allsamplesimportdemmux-filter-stats.qzv ;
+        allsamplesimportrep-seqs-deblur.qza ; FeatureData[Sequence] 
+        allsamplesimportdemmuxtable-deblur.qza ; FeatureTable[Frequency]
+                
+    ```
 ________________________________________________________________________
-
-#### CytoB - Geneious & Mega X
-
-1. Download and import sequences from diadema_ajmc2020\CytoB\RawSequences into Geneious.
-
-2. Merge Pair Ends, Trim, Normalize and Error Correct sequences.
-
-3. Generate consensus sequence of all samples using Diadema setosum as a reference from diadema_ajmc2020\CytoB\ReferenceSequences\Diadema_setosum_Cytochrome.fasta to produce diadema_ajmc2020\CytoB\Geneious\ConsensusSeq\ConsensusSequenceofAllSamplesUsingReferenceDiademasetosum.fasta
-
-4. Generate consensus sequences and contigs from each separate sample.
-
-5. Align Consensus Sequences from samples and all references to diadema_ajmc2020\CytoB\Alignments generate phylogenetic trees in diadema_ajmc2020\CytoB\Trees
