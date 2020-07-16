@@ -1,15 +1,24 @@
-# this file contains all the commands used in the study
+# This file contains all the commands used in the study.
 
-# 1 Adding Metadata
-biom add-metadata -i table_even2762.biom -o seaurchintable.biom --observation-metadata-fp SeaUrchinMetadataQiime2.tsv
+#1 First Step Import Data
 
-# 3 Import Biom table
+qiime tools import   --type 'SampleData[PairedEndSequencesWithQuality]'   --input-path manifest.tsv   --output-path allsamplesimport.qza   --input-format PairedEndFastqManifestPhred33V2
 
-qiime tools import \
-  --input-path seaurchintable.biom \
-  --type 'FeatureTable[Frequency]' \
-  --input-format BIOMV210Format \
-  --output-path seaurchinfeaturetable.qza
+	# 1 Adding Metadata
+	biom add-metadata -i allsamplesimport.qza -o allsamplesseaurchintable.qza --observation-metadata-fp metadata.tsv
+
+	qiime metadata tabulate \
+ 	 --m-input-file metadata.tsv \
+ 	 --m-input-file allsamplesimport.qza \
+ 	 --o-visualization allsamplemetadata.qzv
+
+	# 3 Import Biom table
+
+	qiime tools import \
+ 	 --input-path seaurchintable.biom \
+ 	 --type 'FeatureTable[Frequency]' \
+ 	 --input-format BIOMV210Format \
+ 	 --output-path seaurchinfeaturetable.qza
 
 
 # 4 Import Phylogenetic Trees
@@ -54,7 +63,6 @@ qiime phylogeny midpoint-root \
 import skbio"
 
 
-_______________________
 ### in python:
 
 1.
@@ -73,7 +81,8 @@ for n in t.traverse():
  
 5.
  ar.save('97_otus.qza')
-_______________________
+
+
 
 
 #  8 Diversity (alpha & beta)
