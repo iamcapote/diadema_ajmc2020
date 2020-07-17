@@ -31,6 +31,11 @@ including qiime commands, etc.
 #### CytoB - Geneious & Mega X
 
 Learn how to use Geneious: https://www.geneious.com/
+https://www.geneious.com/tutorials/
+
+Tutorials used in this study:
+https://www.geneious.com/tutorials/de-novo-assembly/
+https://www.geneious.com/tutorials/map-to-reference/
 
 Learn how to use Mega X:
 https://megasoftware.net/
@@ -52,7 +57,7 @@ ______________________________________________
 Qiime2 Commands used can be found in diadema_ajmc2020\16S\qiimecommands.sh
 
 
-Analysis pipeline taken from:
+Tutorial used:
 https://docs.qiime2.org/2020.6/tutorials/moving-pictures/
 
 1. Download and import gg_13_8_otus including phylogenetic trees and references from
