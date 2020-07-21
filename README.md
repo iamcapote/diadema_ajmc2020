@@ -58,7 +58,14 @@ Qiime2 Commands used can be found in diadema_ajmc2020\16S\qiimecommands.sh
 
 
 Tutorial used:
-https://docs.qiime2.org/2020.6/tutorials/moving-pictures/
+
+https://docs.qiime2.org/2020.6/     |       
+
+https://docs.qiime2.org/2020.6/tutorials/moving-pictures/       |       
+
+https://s3-us-west-2.amazonaws.com/qiime2-data/distro/core/virtualbox-images.txt        |       
+
+
 
 1. Download and import gg_13_8_otus including phylogenetic trees and references from
 
