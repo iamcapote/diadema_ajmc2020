@@ -65,7 +65,7 @@ https://docs.qiime2.org/2020.6/tutorials/moving-pictures/       |
 
 https://s3-us-west-2.amazonaws.com/qiime2-data/distro/core/virtualbox-images.txt        |       
 
-
+To view Qiime files (artifacts (.qza files) and visualizations (.qzv files)) without downloading qiime use: https://view.qiime2.org/
 
 1. Download and import gg_13_8_otus including phylogenetic trees and references from
 

@@ -19,14 +19,14 @@ qiime demux summarize \
   --i-data allsamplesimport.qza \
   --o-visualization allsamplesimport.qzv \
 
-# 3 Filter
+# 3 Filter - allsamplesimportdemux-filtered.qza is SampleData[SequenceWithQuality] qiime artifact
 
 qiime quality-filter q-score \
  --i-demux allsamplesimport.qza \
  --o-filtered-sequences allsamplesimportdemux-filtered.qza \ 
  --o-filter-stats allsamplesimportdemux-filter-stats.qza
 
-# 4 Deblur & Generate FeatureTable 
+# 4 Deblur & Generate FeatureTable - Questions on --p-trim-length 220 Generates table-deblur.qza FeatureTable[Frequency] and re-seqs-deblur.qza FeatureData[Sequence]
 
 qiime deblur denoise-16S \
   --i-demultiplexed-seqs allsamplesimportdemux-filtered.qza \
