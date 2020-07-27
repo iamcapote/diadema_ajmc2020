@@ -40,6 +40,11 @@ https://www.geneious.com/tutorials/map-to-reference/
 Learn how to use Mega X:
 https://megasoftware.net/
 
+References:
+
+https://bsapubs.onlinelibrary.wiley.com/doi/epdf/10.3732/apps.1400062
+
+
 1. Download and import sequences from diadema_ajmc2020\CytoB\RawSequences into Geneious.
 
 2. Merge Pair Ends, Trim, Normalize and Error Correct sequences.
@@ -66,6 +71,13 @@ https://docs.qiime2.org/2020.6/tutorials/moving-pictures/       |
 https://s3-us-west-2.amazonaws.com/qiime2-data/distro/core/virtualbox-images.txt        |       
 
 To view Qiime files (artifacts (.qza files) and visualizations (.qzv files)) without downloading qiime use: https://view.qiime2.org/
+
+References:
+1. Bolyen, Evan, et al. “Reproducible, Interactive, Scalable and Extensible Microbiome Data Science Using QIIME 2.” Nature Biotechnology, vol. 37, no. 8, 2019, pp. 852–857., doi:10.1038/s41587-019-0209-9.
+
+2. Estaki, Mehrbod, et al. “QIIME 2 Enables Comprehensive End‐to‐End Analysis of Diverse Microbiome Data and Comparative Studies with Publicly Available Data.” Current Protocols in Bioinformatics, vol. 70, no. 1, 2020, doi:10.1002/cpbi.100.
+
+3. Hall, Michael, and Robert G. Beiko. “16S RRNA Gene Analysis with QIIME2.” Methods in Molecular Biology Microbiome Analysis, 2018, pp. 113–129., doi:10.1007/978-1-4939-8728-3_8.
 
 1. Download and import gg_13_8_otus including phylogenetic trees and references from
 
