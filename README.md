@@ -149,7 +149,7 @@ ______________________________________________
 
 #### 16S rRNA - Qiime2
 
-Qiime2 Commands used can be found in diadema_ajmc2020\16S\qiimecommands.sh
+
 
 
 Tutorial used:
@@ -162,6 +162,8 @@ https://s3-us-west-2.amazonaws.com/qiime2-data/distro/core/virtualbox-images.txt
 
 To view Qiime files (artifacts (.qza files) and visualizations (.qzv files)) without downloading qiime use: https://view.qiime2.org/
 
+
+
 References:
 1. Bolyen, Evan, et al. “Reproducible, Interactive, Scalable and Extensible Microbiome Data Science Using QIIME 2.” Nature Biotechnology, vol. 37, no. 8, 2019, pp. 852–857., doi:10.1038/s41587-019-0209-9.
 
@@ -169,47 +171,100 @@ References:
 
 3. Hall, Michael, and Robert G. Beiko. “16S RRNA Gene Analysis with QIIME2.” Methods in Molecular Biology Microbiome Analysis, 2018, pp. 113–129., doi:10.1007/978-1-4939-8728-3_8.
 
-1. Download and import gg_13_8_otus including phylogenetic trees and references from
 
-http://qiime.org/home_static/dataFiles.html
 
-ftp://greengenes.microbio.me/greengenes_release/gg_13_8_otus/
+Workflow:
 
+QIIME2 Commands used can be found in diadema_ajmc2020\16S\qiimecommands.sh
+
+
+1. Import Data
+
+2. Visualize Data
+Files Generated
 ```
-    qiime2 artifacts generated: 
-        rooted-tree.qza ;
-        sequences.qza ;
-        unrooted-tree.qza ;
-```
-
-2. Download and import sequences from diadema_ajmc2020\16S\RawSequences and generate Qiime2 artifacts
-
-```
-    qiime2 artifacts generated: 
-        allsamplesimport.qza ; 
-        onepointfivesampleimport.qza ; 
-        twopointzeroimport.qza ; 
-        twopointfiveimport.qza ; 
-        threepointzeroimport.qza ; 
-        threepointfive.qza ; 
-        fourpointfive.qza ;      
+allsamplesimport.qzv
 ```
 
+3. Filter
+```
+allsamplesimportdemux-filtered.qza
+allsamplesimportdemux-filter-stats.qza
+```
 
-3. Deblur  
-Create Feature Table and Feature Data Artifacts
+4. Deblur & Generate Feature Table
+```
+allsamplesimportrep-seqs-deblur.qza
+allsamplesimporttable-deblur.qza
+allsamplesimportdeblur-stats.qza
+```
+
+5. Summary Stats
+```
+allsamplesimportdemux-filter-stats.qzv
+allsamplesimportdeblur-stats.qzv
+```
+
+6. Summary Feature Table $ Feature Sequence Data
+```
+seaurchinfeaturetableallsamples.qzv
+sequences.qzv
+```
+
+7. Generate a Phylogenetic Tree
+```
+aligned-rep-seqs.qza
+masked-aligned-rep-seqs.qza
+unrooted-tree.qza
+rooted-tree.qza
+```
+
+8. Alpha & Beta Diversity
+```
+core-metrics-results (FOLDER)
+```
+
+9. Exploring Microbial Composition with Metadata
+```
+core-metrics-results/faith-pd-group-significance.qzv
+core-metrics-results/evenness-group-significance.qzv
 
 ```
-    qiime2 artifacts generated: 
-        allsamplesimportdeblur-stats.qza ;
-        allsamplesimportdeblur-stats.qzv ;
-        allsamplesimportdemux-filter.qza ; SampleData[SequencesWithQuality]
-        allsamplesimportdemmux-filter-stats.qza ;
-        allsamplesimportdemmux-filter-stats.qzv ;
-        allsamplesimportrep-seqs-deblur.qza ; FeatureData[Sequence] 
-        allsamplesimportdemmuxtable-deblur.qza ; FeatureTable[Frequency]
-                
-    ```
+
+10. Permanova
+```
+core-metrics-results/unweighted-unifrac-reefhabitat-significance.qzv
+core-metrics-results/unweighted-unifrac-location-significance.qzv
+```
+
+11. Emperor Plots by Metadata
+```
+core-metrics-results/unweighted-unifrac-emperor-size.qzv
+core-metrics-results/bray-curtis-emperor-size.qzv
+```
+
+12. Alpha Rarefaction Plotting
+```
+alpha-rarefaction.qzv
+```
+
+13. Taxonomic Analysis
+```
+taxonomy.qza
+taxonomy.qzv
+taxa-bar-plots.qzv
+```
+
+14. Group by Metadata
+```
+locationseaurchintable.qza
+```
+
+15. Merge by Metadata.
+```
+grouped-taxa-bar-plots.qzv
+```
+
     
 ______________________________________________
 
