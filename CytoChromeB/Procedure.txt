@@ -1,0 +1,10 @@
+Samples were processed using the following protocol using the Geneious Prime Software:
+
+1. Raw Sequences were merged into Paired Reads using "BBMerge Paired Read Merger Version 38.37 by Brian Bushnell" using default settings, which in this case was Merge Rate: High.
+2. Paired Reads were Trimmed using BBDuk Adapter/Quality Trimming Version 38.37 by Brian Bushnell using defaults settings for Illumina Truseq DNA adapters; Trim: Right end; Kmer length: 27; Maximum Substitutions: 1; Minimum Quality: 30; Minimum Overlap: 20; Minimum Length: 100 bp.
+3. Sequences were Error Corrected and Normalized using "BBNorm Error correction and read normalization version 38.37 by Brian Bushnell" using default settings.
+4. Duplicate reads were removed using Dedupe Duplicate Read Remover 38.37 by Brian Bushnell  on default settings: Kmer seed length: 31
+5. Chimerica reads were removed using UCHIME v4.2.40 Chimeric sequence detection using a reference database by Robert Edgar using default settings and Multiple Sea Urchin Mitochondrion Genome Alignments
+
+
+After processing the samples was completed a de novo assembly was conducted using: Velvet 1.2.10 - algorithms for de novo short read assembly using de Bruijn graphs

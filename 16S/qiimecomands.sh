@@ -4,14 +4,13 @@
 
 qiime tools view qiimevisualization.qzv
 
-
 # 1 Import Data
 
-qiime tools import   
-  --type 'SampleData[PairedEndSequencesWithQuality]'   \
-  --input-path manifest.tsv   \
-  --output-path allsamplesimport.qza   \
-  --input-format PairedEndFastqManifestPhred33V2  \
+qiime tools import
+--type 'SampleData[PairedEndSequencesWithQuality]'
+--input-path manifest.tsv
+--output-path allsamplesimport.qza
+--input-format PairedEndFastqManifestPhred33V2  \
 
 # 2 Visualize data
 
@@ -48,10 +47,10 @@ qiime deblur visualize-stats \
 
 # 6 Summary Feature Table & Feature Sequence Data
 
-qiime feature-table summarize \
-  --i-table allsamplesimporttable-deblur.qza \
-  --o-visualization seaurchinfeaturetableallsamples.qzv \
-  --m-sample-metadata-file metadata.tsv
+qiime feature-table summarize 
+--i-table allsamplesimporttable-deblur.qza 
+--o-visualization seaurchinfeaturetableallsamples.qzv 
+--m-sample-metadata-file metadata.tsv
     
 qiime feature-table tabulate-seqs \
   --i-data allsamplesimportrep-seqs-deblur.qza \
@@ -81,7 +80,7 @@ qiime diversity alpha-group-significance \
   --i-alpha-diversity core-metrics-results/faith_pd_vector.qza \
   --m-metadata-file metadata.tsv \
   --o-visualization core-metrics-results/faith-pd-group-significance.qzv
-  
+
 qiime diversity alpha-group-significance \
   --i-alpha-diversity core-metrics-results/evenness_vector.qza \
   --m-metadata-file metadata.tsv \
@@ -95,7 +94,7 @@ qiime diversity beta-group-significance \
   --m-metadata-column Reef_Habitat \
   --o-visualization core-metrics-results/unweighted-unifrac-reefhabitat-significance.qzv \
   --p-pairwise
- 
+
 # 10b PERMANOVA by Location
 
 qiime diversity beta-group-significance \
@@ -105,23 +104,16 @@ qiime diversity beta-group-significance \
   --o-visualization core-metrics-results/unweighted-unifrac-location-significance.qzv \
   --p-pairwise
 
+# 10c PERMANOVA by Size
 
- # 11 Emperor Plots by Metadata: Size
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file metadata.tsv  \
+  --m-metadata-column Size \
+  --o-visualization core-metrics-results/unweighted-unifrac-size-significance.qzv \
+  --p-pairwise
 
-qiime emperor plot \
-  --i-pcoa core-metrics-results/unweighted_unifrac_pcoa_results.qza \
-  --m-metadata-file metadata.tsv \
-  --p-custom-axes Size \
-  --o-visualization core-metrics-results/unweighted-unifrac-emperor-size.qzv
-
-qiime emperor plot \
-  --i-pcoa core-metrics-results/bray_curtis_pcoa_results.qza \
-  --m-metadata-file metadata.tsv \
-  --p-custom-axes Size \
-  --o-visualization core-metrics-results/bray-curtis-emperor-size.qzv
-
-
-# 12 Alpha Rarefaction Plotting (median freq number from feature table recommended)
+# 11 Alpha Rarefaction Plotting (median freq number from feature table recommended)
 
 qiime diversity alpha-rarefaction \
   --i-table allsamplesimporttable-deblur.qza \
@@ -130,8 +122,7 @@ qiime diversity alpha-rarefaction \
   --m-metadata-file metadata.tsv \
   --o-visualization alpha-rarefaction.qzv
 
-
-# 13 Taxonomic Analysis - Greengenes 13_8 99% OTUs from 515F/806R region of sequences (MD5: 682be39339ef36a622b363b8ee2ff88b)
+# 12 Taxonomic Analysis - Greengenes 13_8 99% OTUs from 515F/806R region of sequences (MD5: 682be39339ef36a622b363b8ee2ff88b)
 
 qiime feature-classifier classify-sklearn \
   --i-classifier gg-13-8-99-515-806-nb-classifier.qza \
@@ -141,15 +132,14 @@ qiime feature-classifier classify-sklearn \
 qiime metadata tabulate \
   --m-input-file taxonomy.qza \
   --o-visualization taxonomy.qzv
-  
+
 qiime taxa barplot \
   --i-table allsamplesimporttable-deblur.qza \
   --i-taxonomy taxonomy.qza \
   --m-metadata-file metadata.tsv \
   --o-visualization taxa-bar-plots.qzv
 
-
-#14 Group by location
+#13 Group by Location
 qiime feature-table group 
   --i-table allsamplesimporttable-deblur.qza  \
   --p-axis sample  \
@@ -158,13 +148,43 @@ qiime feature-table group
   --p-mode sum  \
   --o-grouped-table locationseaurchintable.qza \
 
-
-#15 Taxonomy 
+#14 Taxonomy by Location
 qiime taxa barplot \
   --i-table locationseaurchintable.qza \
   --i-taxonomy taxonomy.qza \
-  --m-metadata-file grouped_meta_location.tsv \
-  --o-visualization grouped-taxa-bar-plots.qzv
+  --m-metadata-file location.tsv \
+  --o-visualization locationgrouped-taxa-bar-plots.qzv
 
+#15 Group by Reef Habitat
+qiime feature-table group 
+  --i-table allsamplesimporttable-deblur.qza  \
+  --p-axis sample  \
+  --m-metadata-file metadata.tsv  \
+  --m-metadata-column Reef_Habitat  \
+  --p-mode sum  \
+  --o-grouped-table habitatseaurchintable.qza \\
+
+#16 Taxonomy by Reef Habitat
+qiime taxa barplot \
+  --i-table habitatseaurchintable.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file grouped_meta_reefhabitat.tsv \
+  --o-visualization habitatgrouped-taxa-bar-plots.qzv
+
+#17 Group by Size
+qiime feature-table group 
+  --i-table allsamplesimporttable-deblur.qza  \
+  --p-axis sample  \
+  --m-metadata-file metadata.tsv  \
+  --m-metadata-column Size  \
+  --p-mode sum  \
+  --o-grouped-table sizeseaurchintable.qza \
+
+#18 Taxonomy by Size
+qiime taxa barplot \
+  --i-table sizeseaurchintable.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file metadata_size.tsv \
+  --o-visualization sizegrouped-taxa-bar-plots.qzv
 
 
