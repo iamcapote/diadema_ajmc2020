@@ -1,7 +1,0 @@
-sample-id	forward-absolute-filepath  	reverse-absolute-filepath
-A3	$PWD/A3_S128_L001_R1_001.fastq.gz	$PWD/A3_S128_L001_R2_001.fastq.gz
-B1	$PWD/B1_S150_L001_R1_001.fastq.gz	$PWD/B1_S150_L001_R2_001.fastq.gz
-B2	$PWD/B2_S129_L001_R1_001.fastq.gz	$PWD/B2_S129_L001_R2_001.fastq.gz
-G3	$PWD/G3_S135_L001_R1_001.fastq.gz	$PWD/G3_S135_L001_R2_001.fastq.gz
-G9	$PWD/G9_S141_L001_R1_001.fastq.gz	$PWD/G9_S141_L001_R2_001.fastq.gz
-H1	$PWD/H1_S159_L001_R1_001.fastq.gz	$PWD/H1_S159_L001_R2_001.fastq.gz

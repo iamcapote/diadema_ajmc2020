@@ -1,4 +1,0 @@
-sample-id	forward-absolute-filepath  	reverse-absolute-filepath
-E1	$PWD/E1_S127_L001_R1_001.fastq.gz	$PWD/E1_S127_L001_R2_001.fastq.gz
-E5	$PWD/E5_S142_L001_R1_001.fastq.gz	$PWD/E5_S142_L001_R2_001.fastq.gz
-E7	$PWD/E7_S131_L001_R1_001.fastq.gz	$PWD/E7_S131_L001_R2_001.fastq.gz
