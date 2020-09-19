@@ -1,0 +1,9 @@
+index,k__Bacteria;__;__;__;__;__,k__Bacteria;p__Bacteroidetes;__;__;__;__,k__Bacteria;p__Firmicutes;__;__;__;__,k__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;__;__,k__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Lachnospiraceae;__,k__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Ruminococcaceae;__,k__Bacteria;p__Proteobacteria;__;__;__;__,k__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;__;__;__,k__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;__;__,k__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Bradyrhizobiaceae;__,k__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Rhizobiaceae;g__Rhizobium,k__Bacteria;p__Proteobacteria;c__Betaproteobacteria;__;__;__,k__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Alcaligenaceae;__,k__Bacteria;p__Proteobacteria;c__Epsilonproteobacteria;__;__;__,k__Bacteria;p__Proteobacteria;c__Epsilonproteobacteria;o__Campylobacterales;f__Helicobacteraceae;__,k__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;__;__;__,k__Bacteria;p__Tenericutes;c__Mollicutes;o__Mycoplasmatales;f__Mycoplasmataceae;g__Candidatus Hepatoplasma
+Ceiba,13550,36,0,18,0,4,9807,28977,7,2,0,263,2,56,42,246,4
+Culebra,13475,12,0,14,0,0,7091,17947,6,0,2,134,4,0,0,64,7
+Guanica,8594,25,14,348,0,0,2107,6539,0,0,0,38,0,0,0,8,2
+Guayama,1534,53,0,6,0,0,2412,5660,0,2,0,38,0,0,0,5,0
+Isabella,2244,28,0,125,0,0,8353,12159,5,3,0,214,2,0,0,69,0
+Luquillo,6718,16,0,73,0,7,7005,17328,4,12,8,117,0,0,0,327,4
+Ponce,4496,24,0,72,0,0,4121,12218,10,0,0,78,0,0,0,35,0
+Rincon,13575,150,0,597,34,2,12237,24122,10,2,2,335,2,0,0,162,1
