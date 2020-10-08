@@ -1,0 +1,45 @@
+#Sample ID	Size	Proportion	Reef_Habitat	Current	Location	ZipCode	Latitude_Longitude	Alignment
+A1	Three	Medium	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+A10	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+A2	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+A3	Two	Small	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+A4	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+A5	Three	Medium	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+A6	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+A7	Three	Medium	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+A8	Three	Medium	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+A9	Three	Medium	Rocky Reef	Medium	Rincon	00677	18.343114, -67.260138	West
+B1	Two	Small	Rocks	Calm	Ponce	00716	17.9724027, -66.6179076	South
+B2	Two	Small	Rocks	Calm	Ponce	00716	17.964016, -66.609962	South
+B3	Three	Medium	Rocks	Calm	Ponce	00716	17.964016, -66.609962	South
+C1	OnePointFive	Small	Spur & Groove Reef	Strong	Isabella	00662	18.515768, -67.100173	North
+C2	TwoPointFive	Medium	Spur & Groove Reef	Strong	Isabella	00662	18.515768, -67.100173	North
+C3	Three	Medium	Spur & Groove Reef	Strong	Isabella	00662	18.515768, -67.100173	North
+C4	FourPointFive	Large	Spur & Groove Reef	Strong	Isabella	00662	18.515768, -67.100173	North
+C5	Three	Medium	Spur & Groove Reef	Strong	Isabella	00662	18.515768, -67.100173	North
+D1	TwoPointFive	Medium	Seagrass	Strong	Luquillo	00773	18.387573, -65.719616	North
+D2	Three	Medium	Seagrass	Strong	Luquillo	00773	18.387573, -65.719616	North
+D3	Three	Medium	Seagrass	Strong	Luquillo	00773	18.387573, -65.719616	North
+D4	TwoPointFive	Medium	Seagrass	Strong	Luquillo	00773	18.387573, -65.719616	North
+D5	TwoPointFive	Medium	Seagrass	Strong	Luquillo	00773	18.387573, -65.719616	North
+E1	ThreePointFive	Large	Reef Rubble	Medium	Culebra	00775	18.302451, -65.309386	East
+E2	Three	Medium	Reef Rubble	Medium	Culebra	00775	18.302451, -65.309386	East
+E3	Three	Medium	Reef Rubble	Medium	Culebra	00775	18.302451, -65.309386	East
+E4	Three	Medium	Reef Rubble	Medium	Culebra	00775	18.302451, -65.309386	East
+E5	ThreePointFive	Large	Reef Rubble	Medium	Culebra	00775	18.302451, -65.309386	East
+E6	Three	Medium	Reef Rubble	Medium	Culebra	00775	18.302451, -65.309386	East
+E7	ThreePointFive	Large	Reef Rubble	Medium	Culebra	00775	18.302451, -65.309386	East
+F1	TwoPointFive	Medium	Rocks	Calm	Guayama	00784	17.929801, -66.158912	South
+F2	OnePointFive	Small	Rocks	Calm	Guayama	00784	17.929801, -66.158912	South
+G1	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	00735	18.218831, -65.604282	North
+G2	Three	Medium	Patch Reef	Medium	Ceiba	00735	18.218831, -65.604282	North
+G3	Two	Small	Patch Reef	Medium	Ceiba	00735	18.218831, -65.604282	North
+G4	TwoPointFive	Medium	Spur & Groove Reef	Medium	Ceiba	00735	18.218831, -65.604282	North
+G5	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	00735	18.218831, -65.604282	North
+G6	TwoPointFive	Medium	Spur & Groove Reef	Medium	Ceiba	00735	18.218831, -65.604282	North
+G7	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	00735	18.218831, -65.604282	North
+G8	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	00735	18.218831, -65.604282	North
+G9	Two	Small	Patch Reef	Medium	Ceiba	00735	18.218831, -65.604282	North
+H1	Two	Small	Rocks	Calm	Guanica	00647	17.934784, -66.957102	South
+H2	Three	Medium	Rocks	Calm	Guanica	00647	17.934784, -66.957102	South
+H3	OnePointFive	Small	Rocks	Calm	Guanica	00647	17.934784, -66.957102	South

@@ -1,0 +1,45 @@
+id	Size	Proportion	Reef_Habitat	Current	Location	Latitude_Longitude	Alignment	faith_pd
+#q2:types	categorical	categorical	categorical	categorical	categorical	categorical	categorical	numeric
+A1	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	1.86409129020809
+A10	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	3.65022778052611
+A2	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	3.91711776618535
+A3	Two	Small	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	2.27221011943133
+A4	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	3.77734026558711
+A5	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	2.07853151587688
+A6	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	2.63218197508958
+A7	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	2.57170799645622
+A8	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	3.01316340973039
+A9	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	2.84265361691294
+B1	Two	Small	Rocks	Calm	Ponce	17.9724027, -66.6179076	South	2.54298482449885
+B2	Two	Small	Rocks	Calm	Ponce	17.964016, -66.609962	South	2.02135987876318
+B3	Three	Medium	Rocks	Calm	Ponce	17.964016, -66.609962	South	3.06200954485573
+C1	OnePointFive	Small	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	2.50383984593846
+C2	TwoPointFive	Medium	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	1.90195078596237
+C3	Three	Medium	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	3.20387351347941
+C4	FourPointFive	Large	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	2.9025717758753
+C5	Three	Medium	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	2.21801438252962
+D1	TwoPointFive	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	3.92938294838447
+D2	Three	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	3.18935575867399
+D3	Three	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	3.35929249358904
+D4	TwoPointFive	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	2.77614268436784
+D5	TwoPointFive	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	2.76503919404718
+E1	ThreePointFive	Large	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	3.03713050615328
+E2	Three	Medium	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	2.5273682632077
+E3	Three	Medium	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	1.14608511294033
+E4	Three	Medium	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	2.34127319963808
+E6	Three	Medium	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	2.10273692389743
+E7	ThreePointFive	Large	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	1.9955804769015
+F1	TwoPointFive	Medium	Rocks	Calm	Guayama	17.929801, -66.158912	South	3.19877352670908
+F2	OnePointFive	Small	Rocks	Calm	Guayama	17.929801, -66.158912	South	2.40927948765376
+G1	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	3.58649953631807
+G2	Three	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	3.2434495404807
+G3	Two	Small	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	1.87605000762351
+G4	TwoPointFive	Medium	Spur & Groove Reef	Medium	Ceiba	18.218831, -65.604282	North	2.87387800032775
+G5	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	2.726548150527
+G6	TwoPointFive	Medium	Spur & Groove Reef	Medium	Ceiba	18.218831, -65.604282	North	2.89996913459552
+G7	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	2.30267748061968
+G8	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	2.84060019604288
+G9	Two	Small	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	2.63674242191519
+H1	Two	Small	Rocks	Calm	Guanica	17.934784, -66.957102	South	2.27863640653447
+H2	Three	Medium	Rocks	Calm	Guanica	17.934784, -66.957102	South	2.81337154291008
+H3	OnePointFive	Small	Rocks	Calm	Guanica	17.934784, -66.957102	South	2.4222273899817

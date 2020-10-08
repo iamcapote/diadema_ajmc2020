@@ -1,0 +1,45 @@
+id	Size	Proportion	Reef_Habitat	Current	Location	Latitude_Longitude	Alignment	pielou_evenness
+#q2:types	categorical	categorical	categorical	categorical	categorical	categorical	categorical	numeric
+A1	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.833893751018997
+A10	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.741409089589048
+A2	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.737564812368355
+A3	Two	Small	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.771647333201593
+A4	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.813926078634193
+A5	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.734332673741979
+A6	TwoPointFive	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.802416516052923
+A7	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.714848658797087
+A8	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.794465872613401
+A9	Three	Medium	Rocky Reef	Medium	Rincon	18.343114, -67.260138	West	0.737724871570204
+B1	Two	Small	Rocks	Calm	Ponce	17.9724027, -66.6179076	South	0.812209999165183
+B2	Two	Small	Rocks	Calm	Ponce	17.964016, -66.609962	South	0.71973801175428
+B3	Three	Medium	Rocks	Calm	Ponce	17.964016, -66.609962	South	0.745173831087259
+C1	OnePointFive	Small	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	0.749057645145804
+C2	TwoPointFive	Medium	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	0.793198716807261
+C3	Three	Medium	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	0.760421846021867
+C4	FourPointFive	Large	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	0.779079712218049
+C5	Three	Medium	Spur & Groove Reef	Strong	Isabella	18.515768, -67.100173	North	0.760487455886272
+D1	TwoPointFive	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	0.700773308709959
+D2	Three	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	0.757171045391321
+D3	Three	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	0.74158054260489
+D4	TwoPointFive	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	0.71370945756659
+D5	TwoPointFive	Medium	Seagrass	Strong	Luquillo	18.387573, -65.719616	North	0.766532074849524
+E1	ThreePointFive	Large	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	0.762858485538824
+E2	Three	Medium	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	0.710270791298375
+E3	Three	Medium	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	0.775545945132681
+E4	Three	Medium	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	0.708702537526382
+E6	Three	Medium	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	0.767475133518188
+E7	ThreePointFive	Large	Reef Rubble	Medium	Culebra	18.302451, -65.309386	East	0.767458722940716
+F1	TwoPointFive	Medium	Rocks	Calm	Guayama	17.929801, -66.158912	South	0.832848247207993
+F2	OnePointFive	Small	Rocks	Calm	Guayama	17.929801, -66.158912	South	0.744646992772959
+G1	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	0.78115552587225
+G2	Three	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	0.744712243642163
+G3	Two	Small	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	0.67434515586842
+G4	TwoPointFive	Medium	Spur & Groove Reef	Medium	Ceiba	18.218831, -65.604282	North	0.818561905527088
+G5	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	0.744662103490429
+G6	TwoPointFive	Medium	Spur & Groove Reef	Medium	Ceiba	18.218831, -65.604282	North	0.72351070965422
+G7	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	0.768462493003496
+G8	TwoPointFive	Medium	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	0.766286973666199
+G9	Two	Small	Patch Reef	Medium	Ceiba	18.218831, -65.604282	North	0.768901582856451
+H1	Two	Small	Rocks	Calm	Guanica	17.934784, -66.957102	South	0.699141380911511
+H2	Three	Medium	Rocks	Calm	Guanica	17.934784, -66.957102	South	0.818284070141056
+H3	OnePointFive	Small	Rocks	Calm	Guanica	17.934784, -66.957102	South	0.757702735367804
