@@ -12,30 +12,43 @@ qiime tools import
 --output-path allsamplesimport.qza 
 --input-format PairedEndFastqManifestPhred33V2  \
 
+#1.5 Join Paired READS
+qiime vsearch join-pairs 
+--i-demultiplexed-seqs allsamplesimport.qza 
+--o-joined-sequences allsamplesimportjoined.qza
+
+qiime demux summarize
+--i-data allsamplesimportjoined.qza
+--o-visualization allsamplesimportjoined.qzv
+
 #2 Sequence Quality (two options):
 
 #Option 1 Deblur:
 #  a.Filter - allsamplesimportdemux-filter.qza is SampleData[SequenceWithQuality] qiime artifact
 
-qiime quality-filter q-score
---i-demux allsamplesimport.qza
---o-filtered-sequences allsamplesimportdemux-filter.qza
+qiime quality-filter q-score 
+--i-demux allsamplesimportjoined.qza 
+--o-filtered-sequences allsamplesimportdemux-filter.qza 
 --o-filter-stats allsamplesimportdemux-filter-stats.qza
 
-#  b.Deblur & Generate FeatureTable - Questions on --p-trim-length 220 Generates table-deblur.qza FeatureTable[Frequency] and re-seqs-deblur.qza FeatureData[Sequence]
+qiime demux summarize
+--i-data allsamplesimportdemux-filter.qza 
+--o-visualization allsamplesimportdemux-filter.qzv
 
-qiime deblur denoise-16S \
-  --i-demultiplexed-seqs allsamplesimportdemux-filter.qza \
-  --p-trim-length 220 \
-  --o-representative-sequences allsamplesimportrep-seqs-deblur.qza \
-  --o-table allsamplesimporttable-deblur.qza \
-  --p-sample-stats \
-  --o-stats allsamplesimportdeblur-stats.qza
+#  b.Deblur & Generate FeatureTable - --p-trim-length 220 Generates table-deblur.qza FeatureTable[Frequency] and re-seqs-deblur.qza FeatureData[Sequence]
+
+qiime deblur denoise-16S
+--i-demultiplexed-seqs allsamplesimportdemux-filter.qza
+--p-trim-length 220
+--o-representative-sequences allsamplesimportrep-seqs-deblur.qza
+--o-table allsamplesimporttable-deblur.qza
+--p-sample-stats
+--o-stats allsamplesimportdeblur-stats.qza
 
 #Option 2 DADA2 (not used in study):
 # a.Denoise
 qiime dada2 denoise-single \
-  --i-demultiplexed-seqs allsamplesimport.qza \
+  --i-demultiplexed-seqs allsamplesimportjoined.qza \
   --p-trim-left 0 \
   --p-trunc-len 220 \
   --o-representative-sequences allsamplesimportrep-seqs-dada.qza \
@@ -69,20 +82,30 @@ qiime feature-table summarize
 qiime phylogeny align-to-tree-mafft-fasttree
 --i-sequences allsamplesimportrep-seqs-deblur.qza
 --o-alignment aligned-rep-seqs.qza
---o-masked-alignment masked-aligned-rep-seqs.qza
---o-tree unrooted-tree.qza
+--o-masked-alignment masked-aligned-rep-seqs.qza 
+-o-tree unrooted-tree.qza
 --o-rooted-tree rooted-tree.qza
 
-#  6 Diversity (Alpha & Beta) [p-sampling-depth 2603 taken from seaurchinfeaturetableallsamples.qzv as the minimum frequency]
+
+# 6 Alpha Rarefaction Plotting (median freq number from feature table recommended)
+
+qiime diversity alpha-rarefaction
+--i-table allsamplesimporttable-deblur.qza
+--i-phylogeny rooted-tree.qza --p-max-depth 2189
+--m-metadata-file metadata.tsv
+--o-visualization alpha-rarefaction.qzv
+
+
+#  7 Diversity (Alpha & Beta) [p-sampling-depth 704 taken from seaurchinfeaturetableallsamples.qzv as the minimum frequency]
 
 qiime diversity core-metrics-phylogenetic
 --i-phylogeny rooted-tree.qza
 --i-table allsamplesimporttable-deblur.qza
---p-sampling-depth 2603
+--p-sampling-depth 704
 --m-metadata-file metadata.tsv
 --output-dir core-metrics-results
 
-# 7 Exploring Microbial Composition with metadata
+# 8 Exploring Microbial Composition with metadata
 
 qiime diversity alpha-group-significance
 --i-alpha-diversity core-metrics-results/faith_pd_vector.qza
@@ -94,7 +117,7 @@ qiime diversity alpha-group-significance
 --m-metadata-file metadata.tsv
 --o-visualization core-metrics-results/evenness-group-significance.qzv
 
-# 8a PERMANOVA by Reef_Habitat
+# 9a PERMANOVA by Reef_Habitat
 
 qiime diversity beta-group-significance
 --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza
@@ -103,7 +126,7 @@ qiime diversity beta-group-significance
 --o-visualization core-metrics-results/unweighted-unifrac-reefhabitat-significance.qzv
 --p-pairwise
 
-# 8b PERMANOVA by Location
+# 9b PERMANOVA by Location
 
 qiime diversity beta-group-significance
 --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza
@@ -112,7 +135,7 @@ qiime diversity beta-group-significance
 --o-visualization core-metrics-results/unweighted-unifrac-location-significance.qzv
 --p-pairwise
 
-# 8c PERMANOVA by Size
+# 9c PERMANOVA by Size
 
 qiime diversity beta-group-significance
 --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza
@@ -121,7 +144,7 @@ qiime diversity beta-group-significance
 --o-visualization core-metrics-results/unweighted-unifrac-size-significance.qzv
 --p-pairwise
 
-# 8d PERMANOVA by Alignment
+# 9d PERMANOVA by Alignment
 qiime diversity beta-group-significance
 --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza
 --m-metadata-file metadata.tsv
@@ -129,7 +152,7 @@ qiime diversity beta-group-significance
 --o-visualization core-metrics-results/unweighted-unifrac-alignment-significance.qzv
 --p-pairwise
 
-# 8e PERMANOVA by Current
+# 9e PERMANOVA by Current
 qiime diversity beta-group-significance
 --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza
 --m-metadata-file metadata.tsv
@@ -137,7 +160,7 @@ qiime diversity beta-group-significance
 --o-visualization core-metrics-results/unweighted-unifrac-current-significance.qzv
 --p-pairwise
 
-# 8c PERMANOVA by Proportion
+# 9c PERMANOVA by Proportion
 
 qiime diversity beta-group-significance
 --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza
@@ -146,14 +169,6 @@ qiime diversity beta-group-significance
 --o-visualization core-metrics-results/unweighted-unifrac-proportion-significance.qzv
 --p-pairwise
 
-# 9 Alpha Rarefaction Plotting (median freq number from feature table recommended)
-
-qiime diversity alpha-rarefaction
---i-table allsamplesimporttable-deblur.qza
---i-phylogeny rooted-tree.qza
---p-max-depth 5677
---m-metadata-file metadata.tsv
---o-visualization alpha-rarefaction.qzv
 
 #10 Group by Metadata Categories
 
@@ -182,7 +197,7 @@ qiime feature-table group
 --m-metadata-file metadata.tsv
 --m-metadata-column Size
 --p-mode sum
---o-grouped-table sizeseaurchintable.qza \
+--o-grouped-table sizeseaurchintable.qza
 
 #10d Group by Alignment
 qiime feature-table group
@@ -231,11 +246,11 @@ qiime taxa barplot
 --o-visualization taxa-bar-plots.qzv
 
 #11b Taxonomy by Location
-qiime taxa barplot \
-  --i-table locationseaurchintable.qza \
-  --i-taxonomy taxonomy.qza \
-  --m-metadata-file location.tsv \
-  --o-visualization locationgrouped-taxa-bar-plots.qzv
+qiime taxa barplot
+--i-table locationseaurchintable.qza
+--i-taxonomy taxonomy.qza
+--m-metadata-file metadata_location.tsv
+--o-visualization locationgrouped-taxa-bar-plots.qzv
 
 #11c Taxonomy by Size
 qiime taxa barplot
@@ -264,3 +279,4 @@ qiime taxa barplot
 --i-taxonomy taxonomy.qza
 --m-metadata-file metadata_proportion.tsv
 --o-visualization proportiongrouped-taxa-bar-plots.qzv
+
